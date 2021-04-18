@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-16"?> 
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task"> 
+  <RegistrationInfo> 
+    <Author>Intel(r) Energy Checker</Author> 
+  </RegistrationInfo> 
+  <Triggers> 
+   <LogonTrigger> 
+     <Repetition> 
+       <Interval>PT3H</Interval> 
+       <StopAtDurationEnd>false</StopAtDurationEnd> 
+     </Repetition> 
+     <Enabled>true</Enabled> 
+     <Delay>PT4M</Delay> 
+   </LogonTrigger> 
+  </Triggers> 
+  <Principals> 
+    <Principal id="Author"> 
+      <UserId>NT AUTHORITY\SYSTEM</UserId> 
+      <RunLevel>HighestAvailable</RunLevel> 
+    </Principal> 
+  </Principals> 
+  <Settings> 
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy> 
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries> 
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries> 
+    <AllowHardTerminate>true</AllowHardTerminate> 
+    <StartWhenAvailable>false</StartWhenAvailable> 
+    <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable> 
+    <IdleSettings> 
+      <StopOnIdleEnd>false</StopOnIdleEnd> 
+      <RestartOnIdle>false</RestartOnIdle> 
+    </IdleSettings> 
+    <AllowStartOnDemand>true</AllowStartOnDemand> 
+    <Enabled>true</Enabled> 
+    <Hidden>false</Hidden> 
+    <RunOnlyIfIdle>false</RunOnlyIfIdle> 
+    <WakeToRun>false</WakeToRun> 
+    <ExecutionTimeLimit>PT3H</ExecutionTimeLimit> 
+    <Priority>2</Priority> 
+  </Settings> 
+  <Actions Context="Author"> 
+    <Exec> 
+      <Command>"C:\WINDOWS\System32\Wscript.exe"</Command> 
+      <Arguments>//B //NoLogo "C:\Program Files\Intel\SUR\QUEENCREEK\x64\task.vbs"</Arguments> 
+      <WorkingDirectory>C:\Program Files\Intel\SUR\QUEENCREEK\x64</WorkingDirectory> 
+    </Exec> 
+  </Actions> 
+</Task> 

@@ -1,0 +1,2 @@
+01/11/2021 21:08:29,INFO:SvcInstall:Display version found from registry: 2.4.06522
+01/11/2021 21:08:39,INFO:SvcInstall:logger end.
